@@ -1,5 +1,18 @@
-# This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
+
+# Always report test coverage when running tests
+# simplecov test coverage has to start before any application code has loaded
+# (so we can't put it at the top of the test_helper as recommended because when 
+# using this default rake task to start tests, as it depends on the db:test:prepare
+# task (which loads the rails env) app code has already been loaded.
+# https://github.com/colszowka/simplecov
+# These lines need to be at the top - see https://github.com/colszowka/simplecov
+require 'simplecov'
+
+# Start simplecov with the default set of rails path filters e.g. vendor/bundle
+# excluded
+SimpleCov.start 'rails'
+
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
