@@ -24,4 +24,6 @@ group :test do
   gem 'capybara' # for capybara integration and spec matchers
   gem 'simplecov', :require => false
   gem 'factory_girl_rails'
+  gem 'simplecov'
+  gem 'simplecov-rcov'
 end

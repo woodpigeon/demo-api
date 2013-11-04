@@ -28,3 +28,5 @@
 .sublime-workspace
 
 /demo-api.sublime-workspace
+
+/coverage/
